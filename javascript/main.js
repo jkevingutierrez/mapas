@@ -3,23 +3,25 @@
     var infowindow;
 
     function initMap() {
-        var pyrmont = { lat: -33.867, lng: 151.195 };
+        $('#btnGoogle').click(function() {
+            var pyrmont = { lat: -33.867, lng: 151.195 };
 
-        map = new google.maps.Map(document.getElementById('googleMap'), {
-            center: pyrmont,
-            zoom: 15
+            map = new google.maps.Map(document.getElementById('googleMap'), {
+                center: pyrmont,
+                zoom: 15
+            });
+
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+                location: pyrmont,
+                radius: 500,
+                type: ['store']
+            }, callback);
         });
-
-        var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(map);
-
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-            location: pyrmont,
-            radius: 500,
-            type: ['store']
-        }, callback);
     }
 
     function callback(results, status) {
