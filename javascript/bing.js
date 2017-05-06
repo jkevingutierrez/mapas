@@ -1,4 +1,4 @@
-(function(){
+(function() {
     function loadMapScenario() {
         $('#btnBing').click(function() {
             var mapElement = document.getElementById('bingMap');
@@ -17,18 +17,11 @@
                     title: 'Pushpin ' + i,
                     description: 'Discription for pushpin' + i
                 };
-                Microsoft.Maps.Events.addHandler(pushpin, 'click', function (args) {
-                    infobox.setOptions({
-                        location: args.target.getLocation(),
-                        title: args.target.metadata.title,
-                        description: args.target.metadata.description,
-                        visible: true
-                    });
-                });
+                Microsoft.Maps.Events.addHandler(pushpin, 'click', handler);
             }
             map.entities.push(pushpins);
 
-            Microsoft.Maps.loadModule('Microsoft.Maps.Traffic', function () {
+            Microsoft.Maps.loadModule('Microsoft.Maps.Traffic', function() {
                 var manager = new Microsoft.Maps.Traffic.TrafficManager(map);
                 manager.show();
             });
@@ -38,5 +31,14 @@
 
     }
 
-    window.loadMapScenario = loadMapScenario
+    function handler(args) {
+        infobox.setOptions({
+            location: args.target.getLocation(),
+            title: args.target.metadata.title,
+            description: args.target.metadata.description,
+            visible: true
+        });
+    }
+
+    window.loadMapScenario = loadMapScenario;
 })();

@@ -27,7 +27,7 @@
             addYourLocationButton(map);
 
             $('#btnGoogle').hide();
-            
+
         });
     }
 
@@ -79,18 +79,18 @@
         secondChild.style.backgroundRepeat = 'no-repeat';
         firstChild.appendChild(secondChild);
 
-        google.maps.event.addListener(map, 'center_changed', function () {
+        google.maps.event.addListener(map, 'center_changed', function() {
             secondChild.style['background-position'] = '0 0';
         });
 
-        firstChild.addEventListener('click', function () {
+        firstChild.addEventListener('click', function() {
             var imgX = '0',
-                animationInterval = setInterval(function () {
+                animationInterval = setInterval(function() {
                     imgX = imgX === '-18' ? '0' : '-18';
-                    secondChild.style['background-position'] = imgX+'px 0';
+                    secondChild.style['background-position'] = imgX + 'px 0';
                 }, 500);
 
-            if(navigator.geolocation) {
+            if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                     map.setCenter(latlng);
