@@ -9,9 +9,16 @@ body {
     margin-top: 10px;
 }
 
+.map-container {
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    margin: 10px;
+}
+
 .map {
+    display: none;
     height: 78vh;
-    margin: 20px;
+    margin: 20px 0;
     width: 100%;
 }
 

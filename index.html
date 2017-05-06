@@ -19,21 +19,27 @@
     </header>
     <main class="main">
         <div class="container">
-            <div class="google-maps-container">
+            <div class="google-maps-container map-container">
                 <h2>Google Maps</h2>
                 <button type="button" id="btnGoogle" class="btn btn-secondary">Mostrar mapa</button>
                 <div class="map" id="googleMap"></div>
             </div>
+            <div class="bing-maps-container map-container">
+                <h2>Bing Maps</h2>
+                <button type="button" id="btnBing" class="btn btn-secondary">Mostrar mapa</button>
+                <div class="map" id="bingMap"></div>
+            </div>
         </div>
     </main>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0yJracVpEYEz5qVPqNJxR9nnsYx3J6jo&libraries=places&callback=initMap">
-    </script>
-    <script src="javascript/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0yJracVpEYEz5qVPqNJxR9nnsYx3J6jo&libraries=places&callback=initMap"></script>
+    <script async defer src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario'></script>
+    <script src="javascript/google.js"></script>
+    <script src="javascript/bing.js"></script>
+</body>
 </body>
 
 </html>
