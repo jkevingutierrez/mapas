@@ -64,8 +64,8 @@
             directionsDisplay.setMap(map);
 
             directionsService.route({
-                origin: 'Bogota',
-                destination: 'Medellin',
+                origin: 'San Francisco',
+                destination: 'New York',
                 travelMode: 'DRIVING'
             }, function(response, status) {
                 if (status === 'OK') {
