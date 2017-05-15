@@ -69,7 +69,6 @@
                 travelMode: 'DRIVING'
             }, function(response, status) {
                 if (status === 'OK') {
-                    console.log(response);
                     directionsDisplay.setDirections(response);
                 } else {
                     window.alert('Directions request failed due to ' + status);
