@@ -18,8 +18,8 @@ body {
 
 .map {
     display: none;
-    height: 73vh;
-    margin: 20px 0;
+    height: calc(100vh - 240px);
+    margin: 20px 0 10px;
     width: 100%;
 }
 
